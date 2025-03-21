@@ -1,0 +1,17 @@
+ENSEMBLE METHODS COMPARISON
+==========================
+
+Date and time: 2025-03-15 12:12:41
+
+MODEL PERFORMANCE COMPARISON:
+------------------------------------------------------------
+Metric         XGBoost        Voting         Stacking       Custom         
+MSE            54008.93       72087.15       53070.96       56203.43       
+RMSE           232.40         268.49         230.37         237.07         
+MAE            137.66         160.22         135.04         138.64         
+R² Score       0.9286         0.9046         0.9298         0.9256         
+------------------------------------------------------------
+
+BEST MODEL: Stacking
+R² Score: 0.9298
+RMSE: 230.37

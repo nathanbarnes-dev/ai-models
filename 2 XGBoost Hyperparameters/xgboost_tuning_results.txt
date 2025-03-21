@@ -1,0 +1,23 @@
+XGBOOST HYPERPARAMETER TUNING RESULTS
+======================================
+
+Date and time: 2025-03-15 12:04:16
+
+BEST PARAMETERS:
+model__learning_rate: 0.1
+model__max_depth: 5
+model__min_child_weight: 3
+model__n_estimators: 200
+
+MODEL PERFORMANCE COMPARISON:
+--------------------------------------------------
+Metric              Default XGBoost     Tuned XGBoost       
+MSE                 72095.77            54008.93            
+RMSE                268.51              232.40              
+MAE                 143.07              137.66              
+R² Score            0.9046              0.9286              
+CV R² Score         N/A                 0.8544              
+--------------------------------------------------
+
+R² Score improved by 2.65%
+RMSE improved by 13.45%

@@ -1,0 +1,147 @@
+======= STARTING MODEL BUILDING PROCESS =======
+Date/Time: 2025-03-15 13:52:27
+Original dataset shape: (5000, 36)
+Shape after removing NaN from target: (4894, 36)
+Shape after removing infinity values from target: (4894, 36)
+Shape after removing extreme outliers from target: (4889, 36)
+
+Dataset Information:
+  Number of records: 4889
+  Number of features: 35
+  Numeric features: 21
+  Categorical features: 15
+
+Target Variable (SettlementValue) Statistics:
+  Mean: 1211.27
+  Median: 988.00
+  Min: 240.00
+  Max: 6976.96
+  Standard Deviation: 832.99
+
+Building baseline model on entire dataset (n=4889)
+Building model for segment: Baseline (n=4889)
+  RMSE: 302.84, MAE: 156.74, R2: 0.8731
+
+Top 10 feature importances for Baseline:
+  GeneralFixed: 0.2231
+  GeneralRest: 0.1908
+  SpecialAssetDamage: 0.1295
+  SpecialEarningsLoss: 0.0908
+  SpecialTherapy: 0.0891
+  SpecialFixes: 0.0633
+  SpecialLoanerVehicle: 0.0626
+  GeneralUplift: 0.0233
+  SpecialUsageLoss: 0.0220
+  SpecialOverage: 0.0209
+
+Segmentation Information:
+  Segmentation variable: Exceptional_Circumstances
+  Number of segments: 3
+  Segment 'No': 4488 records (91.8%)
+  Segment 'Yes': 304 records (6.2%)
+  Segment 'Unknown': 97 records (2.0%)
+
+Building segmented models:
+Building model for segment: Segment_No (n=4488)
+  RMSE: 236.60, MAE: 134.20, R2: 0.9236
+
+Top 10 feature importances for Segment_No:
+  GeneralFixed: 0.1964
+  SpecialAssetDamage: 0.1712
+  GeneralRest: 0.1680
+  SpecialEarningsLoss: 0.0956
+  SpecialTherapy: 0.0919
+  SpecialFixes: 0.0672
+  SpecialLoanerVehicle: 0.0612
+  SpecialUsageLoss: 0.0352
+  SpecialTripCosts: 0.0207
+  SpecialJourneyExpenses: 0.0192
+Building model for segment: Segment_Yes (n=304)
+  RMSE: 301.92, MAE: 158.71, R2: 0.8553
+
+Top 10 feature importances for Segment_Yes:
+  GeneralRest: 0.3727
+  GeneralFixed: 0.2287
+  SpecialTherapy: 0.1204
+  SpecialJourneyExpenses: 0.0654
+  GeneralUplift: 0.0613
+  SpecialEarningsLoss: 0.0472
+  SpecialAssetDamage: 0.0301
+  SpecialMedications: 0.0141
+  Number of Passengers: 0.0123
+  Driver Age: 0.0104
+Building model for segment: Segment_Unknown (n=97)
+  RMSE: 339.04, MAE: 220.31, R2: 0.7090
+
+Top 10 feature importances for Segment_Unknown:
+  SpecialEarningsLoss: 0.5428
+  GeneralRest: 0.1871
+  GeneralFixed: 0.1422
+  SpecialTherapy: 0.0345
+  Driver Age: 0.0280
+  SpecialUsageLoss: 0.0166
+  GeneralUplift: 0.0160
+  SpecialJourneyExpenses: 0.0102
+  SpecialOverage: 0.0077
+  Vehicle Age: 0.0074
+
+Building stacked ensemble model
+Stacked model performance:
+  RMSE: 217.00, MAE: 120.31, R2: 0.9348
+
+Feature importances for stacked model:
+  segment_prediction: 0.8711
+  SpecialAssetDamage: 0.0319
+  GeneralFixed: 0.0148
+  Number of Passengers: 0.0147
+  SpecialJourneyExpenses: 0.0136
+  GeneralRest: 0.0133
+  SpecialTherapy: 0.0098
+  SpecialLoanerVehicle: 0.0077
+  SpecialEarningsLoss: 0.0065
+  Vehicle Age: 0.0063
+  GeneralUplift: 0.0057
+  Driver Age: 0.0046
+  SpecialHealthExpenses: 0.0000
+  SpecialAdditionalInjury: 0.0000
+  SpecialOverage: 0.0000
+  SpecialReduction: 0.0000
+  SpecialMedications: 0.0000
+  SpecialRehabilitation: 0.0000
+  SpecialFixes: 0.0000
+  SpecialUsageLoss: 0.0000
+  SpecialTripCosts: 0.0000
+
+Model Comparison:
+            Baseline  Segmented Models (Weighted)  Stacked Model
+RMSE      302.835284                   242.690080     216.996425
+MAE       156.735021                   137.429637     120.308712
+R2 Score    0.873053                     0.915053       0.934820
+
+Improvements over Baseline:
+              Model  R2 Score  Improvement (%)
+0  Segmented Models  0.915053         4.810701
+1     Stacked Model  0.934820         7.074824
+
+Performance by segment:
+         R2 Score  Segment Size
+No       0.923556          4488
+Yes      0.855259           304
+Unknown  0.709040            97
+
+==================================================
+MODEL BUILDING COMPLETE
+==================================================
+Results saved in the 'output' directory
+Detailed log saved to: output/model_results_20250315_135227.txt
+
+Best model performance:
+  Model: Stacked Model
+  R² Score: 0.9348
+  Improvement: 7.07%
+
+Conclusion and Recommendations:
+  The segmented modeling approach shows substantial improvement over the baseline model.
+  Recommendation: Implement the stacked model approach in production.
+
+======= MODEL BUILDING PROCESS FINISHED =======

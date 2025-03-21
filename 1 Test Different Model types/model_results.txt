@@ -1,0 +1,81 @@
+INSURANCE SETTLEMENT PREDICTION MODEL RESULTS
+===========================================
+
+Date and time: 2025-03-15 11:56:30
+
+MODEL PERFORMANCE METRICS:
+            Model       RMSE        MAE  R� Score
+          XGBoost 239.636461 138.830618  0.924031
+    Random Forest 267.938703 124.441007  0.905027
+Gradient Boosting 300.454949 187.542087  0.880576
+ Lasso Regression 335.683611 192.796115  0.850930
+ Ridge Regression 337.454512 211.273202  0.849353
+Linear Regression 360.589641 240.249588  0.827988
+
+BEST MODEL: XGBoost
+R� Score: 0.9240
+RMSE: 239.64
+
+MODEL DETAILS:
+
+Linear Regression:
+  MSE: 130024.89
+  RMSE: 360.59
+  MAE: 240.25
+  R� Score: 0.8280
+
+Ridge Regression:
+  MSE: 113875.55
+  RMSE: 337.45
+  MAE: 211.27
+  R� Score: 0.8494
+
+Lasso Regression:
+  MSE: 112683.49
+  RMSE: 335.68
+  MAE: 192.80
+  R� Score: 0.8509
+
+Random Forest:
+  MSE: 71791.15
+  RMSE: 267.94
+  MAE: 124.44
+  R� Score: 0.9050
+
+Gradient Boosting:
+  MSE: 90273.18
+  RMSE: 300.45
+  MAE: 187.54
+  R� Score: 0.8806
+
+XGBoost:
+  MSE: 57425.63
+  RMSE: 239.64
+  MAE: 138.83
+  R� Score: 0.9240
+
+Based on the results you've provided, XGBoost is the best performing model. Here's why:
+
+Highest R² Score (0.924031):
+
+R² measures how much of the variance in settlement values your model explains
+XGBoost explains approximately 92.4% of the variance, which is significantly better than the other models
+This is the most important metric for overall model quality
+
+
+Good RMSE (239.636461):
+
+While not the lowest RMSE (Random Forest has a lower RMSE), XGBoost still performs well on this metric
+This means the typical prediction error is around $240
+
+
+Competitive MAE (138.830618):
+
+Again, while not the absolute lowest (Random Forest has 124.44), it's still quite good
+This means on average, predictions are about $139 away from actual values
+
+
+
+The Random Forest model comes in second place with a slightly lower RMSE and MAE but a notably lower R² score (0.905027 vs. 0.924031). This suggests that while Random Forest might have slightly better performance on some individual predictions, XGBoost captures more of the overall patterns in the data.
+The significant gap between these two tree-based models and the linear models (Linear, Ridge, and Lasso Regression) indicates that the settlement values likely have non-linear relationships with the input features that the more complex models can capture better.
+For your insurance settlement prediction task, XGBoost would be the recommended choice based on these metrics.
