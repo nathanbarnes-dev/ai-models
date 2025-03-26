@@ -6,8 +6,10 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
-from sklearn.linear_model import LinearRegression, Ridge, Lasso
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+from sklearn.linear_model import LinearRegression, Ridge, Lasso, SGDRegressor
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, VotingRegressor
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.tree import DecisionTreeRegressor, ExtraTreeRegressor
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 import xgboost as XGBRegressor
 import warnings
@@ -100,6 +102,10 @@ def train_and_evaluate_models(X_train, X_test, y_train, y_test, preprocessor):
     # Dictionary to store model results
     model_results = {}
     
+    r1 = LinearRegression()
+    r2 = RandomForestRegressor(n_estimators=100, random_state=42)
+    r3 = KNeighborsRegressor()
+
     # Define models to test
     models = {
         'Linear Regression': LinearRegression(),
@@ -107,7 +113,11 @@ def train_and_evaluate_models(X_train, X_test, y_train, y_test, preprocessor):
         'Lasso Regression': Lasso(),
         'Random Forest': RandomForestRegressor(n_estimators=100, random_state=42),
         'Gradient Boosting': GradientBoostingRegressor(random_state=42),
-        'XGBoost': XGBRegressor.XGBRegressor(random_state=42)
+        'XGBoost': XGBRegressor.XGBRegressor(random_state=42),
+        'Voting Regressor': VotingRegressor(estimators=[('lr', r1), ('rf', r2), ('r3', r3)]),
+        'SGD Regressor': SGDRegressor(),
+        'Decision Tree': DecisionTreeRegressor(),
+        'Extra Tree Regressor': ExtraTreeRegressor()
     }
     
     for name, model in models.items():
@@ -201,7 +211,7 @@ def main():
     print(models_df.sort_values('R² Score', ascending=False))
     
     # Save model results to text file
-    with open('model_results.txt', 'w') as f:
+    with open('model_results.txt', 'w', encoding='utf-8') as f:
         f.write("INSURANCE SETTLEMENT PREDICTION MODEL RESULTS\n")
         f.write("===========================================\n\n")
         f.write(f"Date and time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")

@@ -13,7 +13,7 @@ os.makedirs('output', exist_ok=True)
 
 # Create a log file
 log_filename = f'output/model_results_{datetime.now().strftime("%Y%m%d_%H%M%S")}.txt'
-log_file = open(log_filename, 'w')
+log_file = open(log_filename, 'w', encoding='utf-8')
 
 # Function to log to both console and file
 def log(message):
