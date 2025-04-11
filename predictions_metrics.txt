@@ -1,0 +1,11 @@
+MODEL EVALUATION METRICS
+=======================
+
+R² Score: 0.9265
+RMSE: $232.84
+MAE: $125.60
+MAPE: 12.35%
+Predictions within 10%: 68.35%
+Predictions within 20%: 88.05%
+Average Bias: $2.81
+Percentage Bias: 0.23%
