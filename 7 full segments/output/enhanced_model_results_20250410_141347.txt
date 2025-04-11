@@ -1,0 +1,198 @@
+======= STARTING ENHANCED MODEL BUILDING PROCESS =======
+Date/Time: 2025-04-10 14:13:47
+Dataset loaded with 5000 rows and 36 columns
+
+--- Handling Missing Values and Outliers ---
+Missing values in SettlementValue: 106
+Removing 106 rows with missing SettlementValue
+Shape after removing infinity values from target: (4894, 36)
+Shape after removing extreme outliers from target: (4889, 36)
+
+--- Adding Engineered Features ---
+Could not calculate days between dates
+Added 12 engineered features
+
+Building baseline model on entire dataset (n=4889)
+
+Building model for segment: Baseline (n=4889)
+Segment model performance:
+  RMSE: 303.35, MAE: 147.71, R2: 0.8726
+
+--- Creating Multi-level Segmentation (Exceptional_Circumstances + AccidentType) ---
+Created segment 'No_Rear end' with 2303 rows
+Created segment 'No_Other side pulled out of side road' with 525 rows
+Created segment 'No_Rear end - Clt pushed into next vehicle' with 224 rows
+Created segment 'No_Other side pulled on to roundabout' with 67 rows
+Created segment 'No_Unknown' with 95 rows
+Created segment 'No_Other side reversed into Clt's vehicle' with 94 rows
+Created segment 'No_Other side changed lanes and collided with clt's vehicle' with 176 rows
+Created segment 'No_Other' with 300 rows
+Created segment 'No_Other side turned across Clt's path' with 245 rows
+Created segment 'No_Other side drove on wrong side of the road' with 84 rows
+Created segment 'No_Other side changed lanes on a roundabout colliding with clt's vehicle' with 78 rows
+Created segment 'No_Rear end - 3 car - Clt at front' with 135 rows
+Created segment 'No_Other side reversed into clt's stationary vehicle' with 61 rows
+Created segment 'Yes_Rear end' with 151 rows
+Created segment 'Unknown' with 97 rows
+Created 'Other' segment with 254 rows
+Created a total of 16 segments
+
+Building model for segment: No_Rear end (n=2303)
+Selecting features for segment: No_Rear end
+Selected 5 features out of 29
+Tuning hyperparameters for segment: No_Rear end
+Best hyperparameters: {'colsample_bytree': 1.0, 'learning_rate': 0.1, 'max_depth': 7, 'min_child_weight': 1, 'n_estimators': 200, 'subsample': 0.8}
+Segment model performance:
+  RMSE: 151.30, MAE: 55.85, R2: 0.9621
+
+Building model for segment: No_Other side pulled out of side road (n=525)
+Selecting features for segment: No_Other side pulled out of side road
+Selected 5 features out of 29
+Tuning hyperparameters for segment: No_Other side pulled out of side road
+Best hyperparameters: {'colsample_bytree': 0.8, 'learning_rate': 0.05, 'max_depth': 7, 'min_child_weight': 1, 'n_estimators': 100, 'subsample': 1.0}
+Segment model performance:
+  RMSE: 291.72, MAE: 114.79, R2: 0.8637
+
+Building model for segment: No_Rear end - Clt pushed into next vehicle (n=224)
+Selecting features for segment: No_Rear end - Clt pushed into next vehicle
+Selected 6 features out of 29
+Tuning hyperparameters for segment: No_Rear end - Clt pushed into next vehicle
+Best hyperparameters: {'colsample_bytree': 1.0, 'learning_rate': 0.1, 'max_depth': 3, 'min_child_weight': 1, 'n_estimators': 200, 'subsample': 0.8}
+Segment model performance:
+  RMSE: 130.68, MAE: 75.34, R2: 0.9742
+
+Building model for segment: No_Other side pulled on to roundabout (n=67)
+Selecting features for segment: No_Other side pulled on to roundabout
+Selected 4 features out of 29
+Tuning hyperparameters for segment: No_Other side pulled on to roundabout
+Best hyperparameters: {'colsample_bytree': 0.8, 'learning_rate': 0.1, 'max_depth': 3, 'min_child_weight': 1, 'n_estimators': 100, 'subsample': 0.8}
+Segment model performance:
+  RMSE: 395.18, MAE: 203.25, R2: 0.7802
+
+Building model for segment: No_Unknown (n=95)
+Selecting features for segment: No_Unknown
+Selected 4 features out of 29
+Tuning hyperparameters for segment: No_Unknown
+Best hyperparameters: {'colsample_bytree': 0.8, 'learning_rate': 0.05, 'max_depth': 3, 'min_child_weight': 1, 'n_estimators': 100, 'subsample': 0.8}
+Segment model performance:
+  RMSE: 424.30, MAE: 294.35, R2: 0.7727
+
+Building model for segment: No_Other side reversed into Clt's vehicle (n=94)
+Selecting features for segment: No_Other side reversed into Clt's vehicle
+Selected 2 features out of 29
+Tuning hyperparameters for segment: No_Other side reversed into Clt's vehicle
+Best hyperparameters: {'colsample_bytree': 1.0, 'learning_rate': 0.1, 'max_depth': 5, 'min_child_weight': 3, 'n_estimators': 200, 'subsample': 1.0}
+Segment model performance:
+  RMSE: 200.12, MAE: 158.42, R2: 0.7843
+
+Building model for segment: No_Other side changed lanes and collided with clt's vehicle (n=176)
+Selecting features for segment: No_Other side changed lanes and collided with clt's vehicle
+Selected 3 features out of 29
+Tuning hyperparameters for segment: No_Other side changed lanes and collided with clt's vehicle
+Best hyperparameters: {'colsample_bytree': 0.8, 'learning_rate': 0.05, 'max_depth': 3, 'min_child_weight': 1, 'n_estimators': 200, 'subsample': 0.8}
+Segment model performance:
+  RMSE: 267.56, MAE: 142.58, R2: 0.7391
+
+Building model for segment: No_Other (n=300)
+Selecting features for segment: No_Other
+Selected 5 features out of 29
+Tuning hyperparameters for segment: No_Other
+Best hyperparameters: {'colsample_bytree': 1.0, 'learning_rate': 0.1, 'max_depth': 5, 'min_child_weight': 1, 'n_estimators': 200, 'subsample': 1.0}
+Segment model performance:
+  RMSE: 412.90, MAE: 144.92, R2: 0.8049
+
+Building model for segment: No_Other side turned across Clt's path (n=245)
+Selecting features for segment: No_Other side turned across Clt's path
+Selected 6 features out of 29
+Tuning hyperparameters for segment: No_Other side turned across Clt's path
+Best hyperparameters: {'colsample_bytree': 1.0, 'learning_rate': 0.05, 'max_depth': 5, 'min_child_weight': 1, 'n_estimators': 100, 'subsample': 1.0}
+Segment model performance:
+  RMSE: 215.59, MAE: 125.42, R2: 0.9419
+
+Building model for segment: No_Other side drove on wrong side of the road (n=84)
+Selecting features for segment: No_Other side drove on wrong side of the road
+Selected 4 features out of 29
+Tuning hyperparameters for segment: No_Other side drove on wrong side of the road
+Best hyperparameters: {'colsample_bytree': 1.0, 'learning_rate': 0.05, 'max_depth': 7, 'min_child_weight': 3, 'n_estimators': 200, 'subsample': 0.8}
+Segment model performance:
+  RMSE: 349.07, MAE: 154.09, R2: 0.6351
+
+Building model for segment: No_Other side changed lanes on a roundabout colliding with clt's vehicle (n=78)
+Selecting features for segment: No_Other side changed lanes on a roundabout colliding with clt's vehicle
+Selected 5 features out of 29
+Tuning hyperparameters for segment: No_Other side changed lanes on a roundabout colliding with clt's vehicle
+Best hyperparameters: {'colsample_bytree': 0.8, 'learning_rate': 0.05, 'max_depth': 5, 'min_child_weight': 1, 'n_estimators': 200, 'subsample': 0.8}
+Segment model performance:
+  RMSE: 47.67, MAE: 31.41, R2: 0.9952
+
+Building model for segment: No_Rear end - 3 car - Clt at front (n=135)
+Selecting features for segment: No_Rear end - 3 car - Clt at front
+Selected 5 features out of 29
+Tuning hyperparameters for segment: No_Rear end - 3 car - Clt at front
+Best hyperparameters: {'colsample_bytree': 1.0, 'learning_rate': 0.1, 'max_depth': 3, 'min_child_weight': 3, 'n_estimators': 200, 'subsample': 1.0}
+Segment model performance:
+  RMSE: 63.02, MAE: 38.39, R2: 0.9953
+
+Building model for segment: No_Other side reversed into clt's stationary vehicle (n=61)
+Selecting features for segment: No_Other side reversed into clt's stationary vehicle
+Selected 4 features out of 29
+Tuning hyperparameters for segment: No_Other side reversed into clt's stationary vehicle
+Best hyperparameters: {'colsample_bytree': 0.8, 'learning_rate': 0.05, 'max_depth': 3, 'min_child_weight': 1, 'n_estimators': 200, 'subsample': 0.8}
+Segment model performance:
+  RMSE: 7.22, MAE: 6.14, R2: 0.9996
+
+Building model for segment: Yes_Rear end (n=151)
+Selecting features for segment: Yes_Rear end
+Selected 5 features out of 29
+Tuning hyperparameters for segment: Yes_Rear end
+Best hyperparameters: {'colsample_bytree': 0.8, 'learning_rate': 0.1, 'max_depth': 3, 'min_child_weight': 1, 'n_estimators': 100, 'subsample': 1.0}
+Segment model performance:
+  RMSE: 396.76, MAE: 199.00, R2: 0.7348
+
+Building model for segment: Unknown (n=97)
+Selecting features for segment: Unknown
+Selected 5 features out of 29
+Tuning hyperparameters for segment: Unknown
+Best hyperparameters: {'colsample_bytree': 1.0, 'learning_rate': 0.1, 'max_depth': 5, 'min_child_weight': 1, 'n_estimators': 200, 'subsample': 0.8}
+Segment model performance:
+  RMSE: 362.93, MAE: 265.42, R2: 0.6666
+
+Building model for segment: Other (n=254)
+Selecting features for segment: Other
+Selected 4 features out of 29
+Tuning hyperparameters for segment: Other
+Best hyperparameters: {'colsample_bytree': 0.8, 'learning_rate': 0.05, 'max_depth': 5, 'min_child_weight': 3, 'n_estimators': 200, 'subsample': 1.0}
+Segment model performance:
+  RMSE: 180.08, MAE: 72.75, R2: 0.8748
+
+Creating meta-features for stacking ensemble
+
+ERROR in main execution: 'No'
+Traceback (most recent call last):
+  File "C:\Users\natha\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'No'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\AII\segmentedmodel.py", line 703, in main
+    df_meta = create_meta_features(df, segments, segment_models)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\AII\segmentedmodel.py", line 437, in create_meta_features
+    df_meta['primary_segment'] = df[primary_col]
+                                 ~~^^^^^^^^^^^^^
+  File "C:\Users\natha\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natha\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'No'
+
+
+======= MODEL BUILDING PROCESS FINISHED =======

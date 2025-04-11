@@ -1,0 +1,3 @@
+,Model,R2 Score,Improvement (%)
+0,Segmented (Weighted),0.9026967488227088,3.4466159957283042
+1,Stacked Ensemble,0.9634950068378588,10.413932603775246
